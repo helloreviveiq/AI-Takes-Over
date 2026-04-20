@@ -8,11 +8,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Bebas+Neue&family=Share+Tech+Mono&display=swap');
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Space Grotesk',sans-serif;background:#060a0f;color:#e8e8f0;overflow-x:hidden;}
-
 canvas#matrix{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.15;}
 .grid-overlay{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(0,255,180,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,180,0.018) 1px,transparent 1px);background-size:60px 60px;}
 .content{position:relative;z-index:1;}
-
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden;}
 .hero-scan{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(0,255,180,0.5),transparent);animation:scan 5s linear infinite;pointer-events:none;}
 .hero-corner{position:absolute;width:20px;height:20px;border-color:rgba(0,255,180,0.5);border-style:solid;}
@@ -20,42 +18,32 @@ canvas#matrix{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;point
 .hero-corner.tr{top:24px;right:24px;border-width:1px 1px 0 0;}
 .hero-corner.bl{bottom:24px;left:24px;border-width:0 0 1px 1px;}
 .hero-corner.br{bottom:24px;right:24px;border-width:0 1px 1px 0;}
-
 .hero-tag{font-family:'Share Tech Mono',monospace;font-size:12px;color:#00ffb4;text-shadow:0 0 12px rgba(0,255,180,0.8);margin-bottom:2rem;letter-spacing:0.1em;opacity:0;animation:fadeUp 0.8s 0.3s ease forwards;}
 .hero-tag span{opacity:0.4;}
-
 .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,13vw,10rem);line-height:0.88;margin-bottom:1.5rem;letter-spacing:0.02em;}
 .hero h1 .word{display:block;color:#ffffff;text-shadow:0 0 40px rgba(255,255,255,0.15);opacity:0;transform:translateY(60px);animation:wordSlide 0.7s ease forwards;}
 .hero h1 .word.glow-green{color:#00ffb4;text-shadow:0 0 20px rgba(0,255,180,0.9),0 0 60px rgba(0,255,180,0.4),0 0 100px rgba(0,255,180,0.2);}
 .hero h1 .word:nth-child(1){animation-delay:0.5s;}
 .hero h1 .word:nth-child(2){animation-delay:0.65s;}
 .hero h1 .word:nth-child(3){animation-delay:0.8s;}
-
-.hero-sub{font-size:1rem;color:rgba(255,255,255,0.55);max-width:440px;line-height:1.7;margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.8s 1.1s ease forwards;text-shadow:0 0 20px rgba(255,255,255,0.1);}
-.hero-scroll{font-family:'Share Tech Mono',monospace;font-size:11px;color:#00ffb4;text-shadow:0 0 10px rgba(0,255,180,0.6);letter-spacing:0.12em;opacity:0;animation:fadeUp 0.8s 1.3s ease forwards;overflow:hidden;white-space:nowrap;border-right:2px solid #00ffb4;width:0;animation:typing 2.5s steps(25,end) 1.5s forwards,blink-caret 0.8s step-end 1.5s infinite;}
-
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.55);max-width:440px;line-height:1.7;margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.8s 1.1s ease forwards;}
+.hero-scroll{font-family:'Share Tech Mono',monospace;font-size:11px;color:#00ffb4;text-shadow:0 0 10px rgba(0,255,180,0.6);letter-spacing:0.12em;overflow:hidden;white-space:nowrap;border-right:2px solid #00ffb4;width:0;animation:typing 2.5s steps(25,end) 1.5s forwards,blink-caret 0.8s step-end 1.5s infinite;}
 .band{padding:5rem 2rem;}
 .band-inner{max-width:760px;margin:0 auto;}
-
 .terminal-label{font-family:'Share Tech Mono',monospace;font-size:12px;color:#00ffb4;text-shadow:0 0 10px rgba(0,255,180,0.7);margin-bottom:1rem;letter-spacing:0.08em;}
 .terminal-label::before{content:'> ';opacity:0.4;}
-
 .section-header{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,5rem);line-height:0.92;margin-bottom:2rem;letter-spacing:0.02em;}
 .section-header .white{color:#ffffff;text-shadow:0 0 30px rgba(255,255,255,0.2);}
 .section-header .green{color:#00ffb4;text-shadow:0 0 20px rgba(0,255,180,0.9),0 0 50px rgba(0,255,180,0.35);}
-
 .body-text{font-size:0.97rem;color:rgba(220,230,220,0.75);line-height:1.85;margin-bottom:1.3rem;}
 .body-text strong{color:#ffffff;text-shadow:0 0 12px rgba(255,255,255,0.3);}
-
 .divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(0,255,180,0.3),transparent);box-shadow:0 0 8px rgba(0,255,180,0.15);}
-
 .stats-band{background:rgba(0,15,10,0.7);padding:5rem 2rem;border-top:1px solid rgba(0,255,180,0.08);border-bottom:1px solid rgba(0,255,180,0.08);}
 .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,255,180,0.08);max-width:760px;margin:0 auto;}
 .stat{background:#060a0f;padding:2.5rem 1.5rem;text-align:center;transition:background 0.3s;}
 .stat:hover{background:rgba(0,255,180,0.04);}
 .stat-num{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:#00ffb4;text-shadow:0 0 20px rgba(0,255,180,1),0 0 50px rgba(0,255,180,0.5),0 0 80px rgba(0,255,180,0.25);line-height:1;margin-bottom:0.4rem;}
 .stat-label{font-size:0.7rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em;line-height:1.5;}
-
 .bars-band{background:rgba(0,8,6,0.8);padding:5rem 2rem;}
 .bar-row{display:flex;align-items:center;gap:1.2rem;margin-bottom:2rem;}
 .bar-label{font-family:'Share Tech Mono',monospace;font-size:0.75rem;color:rgba(0,255,180,0.55);text-shadow:0 0 6px rgba(0,255,180,0.3);width:140px;flex-shrink:0;text-align:right;}
@@ -64,38 +52,31 @@ canvas#matrix{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;point
 .bar-fill.mkt{background:rgba(255,255,255,0.12);box-shadow:none;}
 .bar-pct{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:#00ffb4;text-shadow:0 0 12px rgba(0,255,180,0.8);width:55px;}
 .bar-pct.mkt{color:rgba(255,255,255,0.2);text-shadow:none;}
-
 .quote-band{background:rgba(0,10,8,0.85);padding:6rem 2rem;border-top:1px solid rgba(0,255,180,0.07);}
 .quote-inner{max-width:640px;margin:0 auto;text-align:center;}
 .quote-mark{font-family:'Bebas Neue',sans-serif;font-size:6rem;color:rgba(0,255,180,0.15);line-height:0.4;display:block;margin-bottom:1.5rem;text-shadow:0 0 30px rgba(0,255,180,0.2);}
 .big-quote{font-size:clamp(1.1rem,2vw,1.4rem);color:rgba(255,255,255,0.8);line-height:1.65;margin-bottom:1.5rem;font-style:italic;text-shadow:0 0 20px rgba(255,255,255,0.1);}
 .quote-source{font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:#00ffb4;text-shadow:0 0 8px rgba(0,255,180,0.6);letter-spacing:0.1em;}
-
 .highlight-box{background:rgba(0,255,180,0.03);border:1px solid rgba(0,255,180,0.15);padding:1.5rem 2rem;margin:2rem 0;position:relative;transition:border-color 0.3s,background 0.3s,box-shadow 0.3s;}
 .highlight-box:hover{border-color:rgba(0,255,180,0.4);background:rgba(0,255,180,0.06);box-shadow:0 0 20px rgba(0,255,180,0.08),inset 0 0 20px rgba(0,255,180,0.03);}
 .highlight-box::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:#00ffb4;box-shadow:0 0 10px rgba(0,255,180,0.8);}
 .highlight-box p{font-size:0.9rem;color:rgba(220,235,220,0.7);line-height:1.75;margin:0;}
-
 .glitch{position:relative;animation:glitchLoop 6s infinite;}
 .glitch::before,.glitch::after{content:attr(data-text);position:absolute;top:0;left:0;width:100%;height:100%;}
 .glitch::before{color:#00ffb4;text-shadow:0 0 20px rgba(0,255,180,0.9);animation:glitch1 6s infinite;clip-path:polygon(0 0,100% 0,100% 35%,0 35%);}
 .glitch::after{color:#ff00aa;animation:glitch2 6s infinite;clip-path:polygon(0 65%,100% 65%,100% 100%,0 100%);opacity:0.5;}
-
 .wc-band{background:#040608;padding:4rem 2rem;border-top:1px solid rgba(0,255,180,0.05);}
 .wc-inner{max-width:760px;margin:0 auto;}
 .wc-title{font-family:'Share Tech Mono',monospace;font-size:10px;color:rgba(0,255,180,0.3);text-shadow:0 0 6px rgba(0,255,180,0.2);margin-bottom:1.5rem;letter-spacing:0.15em;}
 .wc-inner ol{padding-left:1.2rem;}
 .wc-inner li{font-size:0.78rem;color:rgba(255,255,255,0.3);margin-bottom:0.8rem;line-height:1.6;}
 .wc-inner li a{color:rgba(0,255,180,0.5);text-shadow:0 0 6px rgba(0,255,180,0.3);text-decoration:underline;text-underline-offset:2px;}
-
 footer{background:#040608;text-align:center;padding:2rem;font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:#00ffb4;text-shadow:0 0 8px rgba(0,255,180,0.5);letter-spacing:0.12em;border-top:1px solid rgba(0,255,180,0.05);}
-
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.9s ease,transform 0.9s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .stagger-1{transition-delay:0s;}
 .stagger-2{transition-delay:0.1s;}
 .stagger-3{transition-delay:0.2s;}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
 @keyframes wordSlide{from{opacity:0;transform:translateY(60px);}to{opacity:1;transform:translateY(0);}}
 @keyframes scan{0%{top:-2px;opacity:1;}80%{opacity:1;}100%{top:100%;opacity:0;}}
@@ -108,12 +89,10 @@ footer{background:#040608;text-align:center;padding:2rem;font-family:'Share Tech
 </style>
 </head>
 <body>
-
 <canvas id="matrix"></canvas>
 <div class="grid-overlay"></div>
-
 <div class="content">
-
+ 
 <div class="hero">
   <div class="hero-scan"></div>
   <div class="hero-corner tl"></div><div class="hero-corner tr"></div>
@@ -127,21 +106,21 @@ footer{background:#040608;text-align:center;padding:2rem;font-family:'Share Tech
   <p class="hero-sub">Writers, illustrators, designers — the jobs everyone said machines could never do.</p>
   <p class="hero-scroll">// scroll_to_initialize</p>
 </div>
-
+ 
 <div class="divider"></div>
-
+ 
 <div class="band">
   <div class="band-inner">
     <p class="terminal-label reveal">SECTION_01 — INTRODUCTION</p>
     <h2 class="section-header reveal"><span class="white">EVERYONE SAID<br>CREATIVE WORK<br>WAS </span><span class="green">SAFE.</span></h2>
-    <p class="body-text reveal">For a while, that was the safe assumption. AI was going to take factory jobs, call center jobs, data entry. Not writing. Not illustration. Not music. Those took something human — taste, intuition, years of actually living and having opinions about things.</p>
-    <p class="body-text reveal">Then 2022 happened. Midjourney, DALL-E, ChatGPT — within a few months, the tools went from novelty to genuinely threatening. You could type a prompt and get a finished illustration back in seconds. A marketing campaign in an hour. The assumption turned out to be way more fragile than anyone expected.</p>
-    <p class="body-text reveal">I wanted to understand why this is happening: what's driving companies to replace creative workers, what does the job loss data show, and what does it mean for the people on the losing end.</p>
+    <p class="body-text reveal">For a while, that felt like a safe bet. AI was going to handle the boring stuff — factory floors, call centers, spreadsheets nobody wanted to touch. Not the creative work. Writing, illustration, music — those needed something a machine couldn't replicate. Taste. Lived experience. The ability to make something that actually meant something to another person.</p>
+    <p class="body-text reveal">Then 2022 happened and that whole assumption fell apart pretty fast. Midjourney, DALL-E, ChatGPT showed up and within a few months you could type a sentence and get back a finished illustration. A full ad campaign. A song. The line everyone thought existed just... wasn't there anymore.</p>
+    <p class="body-text reveal">That's kind of what I wanted to dig into with this project. Not just "AI is changing things" — that's obvious at this point — but specifically why companies are replacing creative workers so fast, what the actual numbers look like, and what it means for the people on the other side of it.</p>
   </div>
 </div>
-
+ 
 <div class="divider"></div>
-
+ 
 <div class="bars-band">
   <div class="band-inner">
     <p class="terminal-label reveal">SECTION_02 — DATA_OUTPUT</p>
@@ -175,7 +154,7 @@ footer{background:#040608;text-align:center;padding:2rem;font-family:'Share Tech
     <p class="body-text reveal">These aren't layoffs — they're companies quietly stopping the search for humans in the first place. Graphic artist postings dropped 12% in 2024, then <strong>another 33% in 2025.</strong></p>
   </div>
 </div>
-
+ 
 <div class="stats-band">
   <div class="stats-grid">
     <div class="stat reveal stagger-1">
@@ -192,124 +171,3 @@ footer{background:#040608;text-align:center;padding:2rem;font-family:'Share Tech
     </div>
   </div>
 </div>
-
-<div class="divider"></div>
-
-<div class="band">
-  <div class="band-inner">
-    <p class="terminal-label reveal">SECTION_03 — ROOT_CAUSE</p>
-    <h2 class="section-header reveal"><span class="white">CHEAPER.<br></span><span class="green">FASTER.</span><span class="white"><br>SIMPLE.</span></h2>
-    <p class="body-text reveal">A Midjourney subscription is $30/month and generates unlimited images. A freelance illustrator charges hundreds per piece and takes days. For any company producing content at scale, that math is not a hard call.</p>
-    <p class="body-text reveal">Harvard Business School tracked job postings from 2019 through early 2025 and found that roles prone to automation required <strong>7% fewer listed skills.</strong> "Prompt writing" started showing up where "creative writing" used to be.</p>
-    <div class="highlight-box reveal">
-      <p>"Rather than solely eliminating jobs, generative AI creates new demand in augmentation-prone roles, suggesting that human-AI collaboration is a key driver of labor market transformation." — <em>Harvard Business School, 2024</em></p>
-    </div>
-    <p class="body-text reveal">There's also a competitive pressure angle. If a competitor's design team uses AI and yours doesn't, they produce more in less time. It becomes less of a choice and more of an arms race nobody asked to be in.</p>
-  </div>
-</div>
-
-<div class="quote-band">
-  <div class="quote-inner reveal">
-    <span class="quote-mark">"</span>
-    <p class="big-quote">If we allow generative AI to destroy human creative industries by displacing jobs and discouraging aspiring artists, we are heading towards a future where art and music styles collapse inward on themselves.</p>
-    <p class="quote-source">// UNCTAD_2024</p>
-  </div>
-</div>
-
-<div class="band">
-  <div class="band-inner">
-    <p class="terminal-label reveal">SECTION_04 — HUMAN_IMPACT</p>
-    <h2 class="section-header reveal"><span class="white">BEHIND THE DATA:<br></span><span class="green">REAL PEOPLE.</span></h2>
-    <p class="body-text reveal">UNCTAD documented that since 2022, human illustrators, graphic designers, and game artists have been replaced in real numbers. Entertainment industry layoffs in 2023 and 2024 were explicitly tied to AI — not a recession, not offshoring.</p>
-    <p class="body-text reveal">The 2023 Hollywood strikes made this hard to ignore. Writers went on strike partly because studios were exploring AI-generated scripts. Actors struck over the idea of having their likeness scanned once and reused indefinitely. Studios actually put those proposals on the table.</p>
-    <p class="body-text reveal">What makes this genuinely uncomfortable is that AI learned from the people it's replacing. Generative models were trained on millions of images, stories, and songs made by artists who never consented and got nothing back. There are active lawsuits. Nobody's won yet.</p>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<div class="band">
-  <div class="band-inner">
-    <p class="terminal-label reveal">SECTION_05 — CONCLUSION</p>
-    <h2 class="section-header reveal"><span class="white">CREATIVE WORK ISN'T DYING.<br></span><span class="green">BUT SOMETHING IS.</span></h2>
-    <p class="body-text reveal">Photography didn't kill painting. Synthesizers didn't kill musicians. Creative fields adapted, and there's a reasonable case that this time won't be different.</p>
-    <p class="body-text reveal">But that argument can become a way to skip past what's happening right now. A 22-year-old who graduated with an illustration degree this year is walking into a market where a third of the job postings disappeared in one year. "It'll sort itself out" is probably true and not very useful at the same time.</p>
-    <p class="body-text reveal">Research from the Open University of Catalonia argues that AI amplifies human creativity rather than replacing it. I think that's true for people with time and resources to adapt. The problem is that adaptation isn't equally available. The people whose work is being replaced didn't get a vote on the timeline.</p>
-  </div>
-</div>
-
-<div class="wc-band">
-  <div class="wc-inner reveal">
-    <p class="wc-title">// WORKS_CITED</p>
-    <ol>
-      <li>Srinivasan, Suraj, et al. "Displacement or Complementarity? The Labor Market Impact of Generative AI." <em>Harvard Business School Working Knowledge</em>, 20 Feb. 2026. <a href="https://www.library.hbs.edu/working-knowledge/enhance-or-eliminate-how-ai-will-likely-change-these-jobs" target="_blank">library.hbs.edu</a></li>
-      <li>Maguire, Mark. "AI and Work in the Creative Industries: Digital Continuity or Discontinuity?" <em>Creative Industries Journal</em>, Taylor &amp; Francis, 28 Oct. 2024. <a href="https://www.tandfonline.com/doi/full/10.1080/17510694.2024.2421135" target="_blank">tandfonline.com</a></li>
-      <li>United Nations Conference on Trade and Development. "Replacement of Human Artists by AI Systems in Creative Industries." <em>UNCTAD</em>, 28 Mar. 2024. <a href="https://unctad.org/news/replacement-human-artists-ai-systems-creative-industries" target="_blank">unctad.org</a></li>
-      <li>"How Might Generative AI Change Creative Jobs?" <em>World Economic Forum</em>, 2023. <a href="https://www.weforum.org/stories/2023/05/generative-ai-creative-jobs" target="_blank">weforum.org</a></li>
-      <li>Lunt, Gideon. "I Analyzed 180M Jobs to See What Jobs AI Is Actually Replacing Today." <em>Bloomberry</em>, Mar. 2026. <a href="https://bloomberry.com/blog/i-analyzed-180m-jobs-to-see-what-jobs-ai-is-actually-replacing-today/" target="_blank">bloomberry.com</a></li>
-    </ol>
-  </div>
-</div>
-
-<footer>// RUTGERS_UNIVERSITY &nbsp;&middot;&nbsp; EXPOSITORY_WRITING &nbsp;&middot;&nbsp; PROJECT_04</footer>
-</div>
-
-<script>
-const canvas=document.getElementById('matrix');
-const ctx=canvas.getContext('2d');
-const resize=()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;};
-resize();
-window.addEventListener('resize',resize);
-const cols=Math.floor(window.innerWidth/20);
-const drops=Array(cols).fill(1);
-const chars='01アイウエオカキクケコサシスセソタチツテトABCDEF0123456789<>//\\{}';
-const draw=()=>{
-  ctx.fillStyle='rgba(6,10,15,0.05)';
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-  drops.forEach((y,i)=>{
-    const char=chars[Math.floor(Math.random()*chars.length)];
-    const bright=Math.random();
-    ctx.fillStyle=bright>0.97?'rgba(255,255,255,0.9)':bright>0.9?'rgba(0,255,180,0.7)':'rgba(0,255,180,'+(Math.random()*0.3+0.1)+')';
-    ctx.font='14px Share Tech Mono,monospace';
-    ctx.fillText(char,i*20,y*20);
-    if(y*20>canvas.height&&Math.random()>0.975)drops[i]=0;
-    drops[i]++;
-  });
-};
-setInterval(draw,50);
-
-const allReveals=document.querySelectorAll('.reveal');
-const revObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);}});
-},{threshold:0.08});
-allReveals.forEach(r=>revObs.observe(r));
-
-const fills=document.querySelectorAll('.bar-fill');
-const barObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.style.width=e.target.getAttribute('data-pct')+'%';barObs.unobserve(e.target);}});
-},{threshold:0.4});
-fills.forEach(f=>barObs.observe(f));
-
-const animateCounter=(el,target,suffix)=>{
-  let start=0;
-  const step=ts=>{
-    if(!start)start=ts;
-    const prog=Math.min((ts-start)/1500,1);
-    const ease=1-Math.pow(1-prog,3);
-    el.textContent=Math.round(ease*target)+suffix;
-    if(prog<1)requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-};
-const statObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      animateCounter(e.target,+e.target.getAttribute('data-target'),e.target.getAttribute('data-suffix'));
-      statObs.unobserve(e.target);
-    }
-  });
-},{threshold:0.5});
-document.querySelectorAll('.stat-num[data-target]').forEach(s=>statObs.observe(s));
-</script>
-</body>
-</html>
