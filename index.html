@@ -134,6 +134,96 @@ footer{background:rgba(10,14,19,0.4);text-align:center;padding:2rem;font-family:
 .tl-year-green{color:#00ffb4;text-shadow:0 0 12px rgba(0,255,180,0.7);}
 .tl-text{font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;}
 @keyframes pulseDot{0%,100%{box-shadow:0 0 16px rgba(0,255,180,1),0 0 32px rgba(0,255,180,0.5);}50%{box-shadow:0 0 24px rgba(0,255,180,1),0 0 50px rgba(0,255,180,0.8);}}
+
+@media (max-width: 900px){
+  .band,
+  .stats-band,
+  .bars-band,
+  .timeline-band,
+  .wc-band{
+    padding:4rem 5%;
+  }
+
+  .body-text{
+    font-size:1.15rem;
+    line-height:1.8;
+  }
+
+  .section-header{
+    font-size:clamp(2.8rem,11vw,5rem);
+  }
+
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .bar-row{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0.6rem;
+  }
+
+  .bar-label{
+    width:auto;
+    text-align:left;
+    font-size:0.85rem;
+  }
+
+  .bar-track{
+    width:100%;
+  }
+
+  .cost-compare{
+    flex-direction:column;
+  }
+
+  .cost-card{
+    width:100%;
+  }
+
+  .cost-vs{
+    font-size:1.6rem;
+  }
+}
+
+@media (max-width: 600px){
+  .hero{
+    padding:3rem 1.2rem;
+  }
+
+  .hero h1{
+    font-size:clamp(4rem,18vw,7rem);
+  }
+
+  .hero-sub{
+    font-size:1.05rem;
+  }
+
+  .body-text{
+    font-size:1.08rem;
+  }
+
+  .highlight-box,
+  .reflection-box,
+  .typewriter-wrap{
+    padding:1.3rem;
+  }
+
+  .tw-row{
+    flex-direction:column;
+    gap:0.4rem;
+  }
+
+  .stat-num{
+    font-size:3.5rem;
+  }
+
+  .wc-inner li{
+    font-size:0.9rem;
+    word-break:break-word;
+  }
+}
+
 </style>
 </head>
 <body>
