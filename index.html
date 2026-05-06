@@ -134,6 +134,13 @@ footer{background:rgba(10,14,19,0.4);text-align:center;padding:2rem;font-family:
 .tl-year-green{color:#00ffb4;text-shadow:0 0 12px rgba(0,255,180,0.7);}
 .tl-text{font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;}
 @keyframes pulseDot{0%,100%{box-shadow:0 0 16px rgba(0,255,180,1),0 0 32px rgba(0,255,180,0.5);}50%{box-shadow:0 0 24px rgba(0,255,180,1),0 0 50px rgba(0,255,180,0.8);}}
+/* VIDEO LINK CARD */
+.video-link-card{display:block;background:rgba(0,255,180,0.03);border:1px solid rgba(0,255,180,0.2);padding:2rem;text-decoration:none;transition:background 0.3s,border-color 0.3s,box-shadow 0.3s;margin:2rem 0;}
+.video-link-card:hover{background:rgba(0,255,180,0.07);border-color:rgba(0,255,180,0.5);box-shadow:0 0 24px rgba(0,255,180,0.1);}
+.video-link-inner{display:flex;align-items:center;gap:1.5rem;}
+.video-play-icon{font-size:2.5rem;color:#00ffb4;text-shadow:0 0 16px rgba(0,255,180,0.8);flex-shrink:0;}
+.video-link-title{font-family:'Space Grotesk',sans-serif;font-size:1rem;color:#ffffff;font-weight:600;margin-bottom:0.4rem;}
+.video-link-source{font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:rgba(0,255,180,0.5);letter-spacing:0.08em;}
 </style>
 </head>
 <body>
@@ -288,6 +295,17 @@ footer{background:rgba(10,14,19,0.4);text-align:center;padding:2rem;font-family:
     <p class="terminal-label reveal">SECTION_04 — HUMAN_IMPACT</p>
     <h2 class="section-header reveal"><span class="white">BEHIND THE DATA:<br></span><span class="green">REAL PEOPLE.</span></h2>
     <p class="body-text reveal">UNCTAD tracked real job losses — illustrators, graphic designers, game designers since 2022. These weren't distant statistics. They were real people whose work disappeared not because of a market crash but because the industry quietly moved on without them.</p>
+    <div class="video-wrap reveal">
+      <a href="https://www.youtube.com/watch?v=l19wl3CHvjg" target="_blank" class="video-link-card">
+        <div class="video-link-inner">
+          <div class="video-play-icon">▶</div>
+          <div class="video-link-text">
+            <div class="video-link-title">"How Generative AI Could Replace Artists in Creative Industries"</div>
+            <div class="video-link-source">// Wall Street Journal — Click to watch on YouTube</div>
+          </div>
+        </div>
+      </a>
+    </div>
     <p class="body-text reveal">The Hollywood strikes made that transformation visible. Writers went on strike as studios began using AI-generated scripts. Actors did the same. These concerns actually showed up in actual contract negotiations.</p>
     <p class="body-text reveal">What makes the training data issue even harder to ignore is where these models actually learned from. Platforms such as Tumblr and ArtStation allowed artists to post their work publicly, build portfolios, and find their audiences. None of them signed up expecting to become a dataset. When the backlash hit, many artists started poisoning their work with invisible data to corrupt AI training. Many just deleted their work entirely. The tool replacing them had learned everything it knew from them first.</p>
     <p class="body-text reveal">There's also a harder reality underneath it all: all the models replacing this work were trained on the work of the same people being replaced. Millions of images, stories, and songs were used without consent or any compensation. Lawsuits were ongoing, but no results have come out of them yet.</p>
